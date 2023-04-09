@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="posYdisp.js"></script>
+    <link rel="stylesheet" href="posYdispStyle.css" type="text/css">
+</head>
+<body>
+    <h1>Medidas de posicion y dispersion</h1>
+    <div id="botones"> <button><a href="combinatorioYprobabilidad.html">Analisis Combinatorio y Probabilidad</a></button></div>
+<div id="mainContainer">
+    <div id="data">
+    
+
+    <h2>Ingresar observaciones separadas por ","</h2>
+    <h2>axb ingresa a tantas veces como el valor de b ; 2x3 => 2,2,2</h2>
+ <form action="">
+    <textarea name="" id="observaciones" cols="30" rows="10"></textarea><br>
+    <input type="button" value="procesar" onclick= "procesar()">
+</form>
+<h3>Formatear</h3>
+<form action="">
+    
+   <p>Cambiar</p>
+    <input type="text" name="reemplazar" id="reemplazar">
+   <p>Por</p>
+    <input type="text" name="reemplazo" id="reemplazo"><br>
+    <input type="button" value="formatear" onclick="formatear()">
+</form>
+</div>
+<div id="respuesta">
+    <h1>Solucion</h1>
+    <p id="txMedia">Media : </p>
+    <p id="txMediana">Mediana : </p>
+    <p id="txModa">Moda : </p>
+    <p id="txObservacionesOrdenadas"> Observaciones ordenadas : </p>
+    <p id="minMax"></p>
+    <p id="txCuartiles">Cuartiles : </p>
+    <p id="txRangoIntercuartilico">Rango Intercuartilico : </p>
+    <p id="txRango">Rango : </p>
+    <p id="txVarianzaMuestral">Varianza Muestral : </p>
+    <p id="txVarianzaPoblacional">Varianza poblacional : </p>
+    <p id="txDesviacionStandartMuestral">Desviacion Estandar Muestral : </p>
+    <p id="txDesviacionStandartPoblacional">Desviacion Estandar Poblacional : </p>
+
+
+ 
+    
+    
+</div>
+</div>
+
+</body>
+</html>

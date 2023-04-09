@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    text-align: center;
+  
+   
+}
+
+#data{
+    width: 50%;
+    text-align: center;
+}
+
+#respuesta{
+   width: 50%;
+    text-align: center;
+}
+
+
+
+#observaciones{
+    width: 90%;
+}
+
+#contenedorGrafico{
+    width: 100%;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
