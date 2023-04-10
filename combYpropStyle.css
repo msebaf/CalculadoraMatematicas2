@@ -7,3 +7,22 @@ h1{
 a {
     text-decoration: none;
 }
+
+
+
+#analisisCombinatorio {
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    text-align: center;
+  }
+  
+  #analisisCombinatorioSimple{
+    width: 50%;
+    text-align: center;
+  }
+  
+  #analisisCombinatorioConRepeticion{
+    width: 50%;
+    text-align: center;
+  }

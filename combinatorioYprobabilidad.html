@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,47 @@
     <link rel="stylesheet" href="combYpropStyle.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Analisis Combinatorio y Probabilidad</h1>
     <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button></div>
-    
+
+
+    <h2>Analisis combinatorios</h2>
+    <div id="analisisCombinatorio">
+        <input type="number" id="n" placeholder="Introduce tu n" style="font-size: 26px">
+        <input type="number" id="p" placeholder="Introduce tu p" style="font-size: 26px">
+
+        <div id="analisisCombinatorioSimple">
+            <h3>Analisis combinatorio Simple</h3>
+            <button
+                onclick="arreglosSimples(),permutacionesSimples(),combinacionesSimples(),arreglosConRepeticion(),permutacionesConRepeticion(),combinacionesConRepeticion()">RESULTADO
+                DE TODO</button>
+            <p>siempre n > p</p>
+            <button onclick="arreglosSimples()">Arreglos Simples</button>
+            <h4 id="resultadoArreglo"> </h4>
+            <button onclick="permutacionesSimples()">Permutaciones Simples</button>
+            <h4 id="resultadoPermutacion"> </h4>
+            <button onclick="combinacionesSimples()">Combinaciones Simples</button>
+            <h4 id="resultadoCombinacionSimple"> </h4>
+        </div>
+        <br>
+
+
+        <div id="analisisCombinatorioConRepeticion">
+            <h3>Análisis Combinatorio con Repetición</h3>
+            <button onclick="arreglosConRepeticion()">Arreglos Con Repeticion</button>
+            <h4 id="resultadoArregloConRepeticion"> </h4>
+            <button onclick="permutacionesConRepeticion()">Permutaciones Con Repeticion</button>
+            <h4 id="resultadoPermutacionConRepeticion"> en proceso</h4>
+            <button onclick="combinacionesConRepeticion()">Combinaciones Con Repeticion</button>
+            <h4 id="resultadoCombinacionConRepeticion"> </h4>
+
+        </div>
+
+
+
+    </div>
 </body>
+
 </html>
