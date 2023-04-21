@@ -59,13 +59,31 @@ function arreglosSimples() {
   
   function permutacionesConRepeticion() {
     const n = document.getElementById("n").value;
-    let resultado = 1;
-    for (let i = 2; i <= n; i++) {
-      resultado *= i;
+    const p = document.getElementById("pPerRep").value;
+    let numerosPString = p.split(",");
+    
+    let numerosP =[];
+    numerosPString.forEach(numero => {
+      numerosP.push(parseInt(numero));
+    });
+    
+    let sumaP=0;
+    for(let i = 0 ; i < numerosP.length; i++){
+        sumaP += numerosP[i];
     }
-    const resultadoPermutacion = document.getElementById("resultadoPermutacion");
-    resultadoPermutacion.innerHTML = resultado;
-    return resultado;
+    if(sumaP > n){
+      document.getElementById("resultadoPermutacionConRepeticion").innerHTML = "La suma de p no puede ser myor a n";
+    }
+    else{
+
+      let divisor = 1
+      for(let i = 0; i < numerosP.length; i++){
+        divisor *= factorial(numerosP[i]);
+     
+      }
+      document.getElementById("resultadoPermutacionConRepeticion").innerHTML = factorial(n)/divisor;
+    }
+
   }
   
   function combinacionesConRepeticion() {

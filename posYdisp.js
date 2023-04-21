@@ -11,7 +11,7 @@ function procesar(){
     document.getElementById("txModa").innerHTML = "Moda : "
     document.getElementById("txObservacionesOrdenadas").innerHTML = "Observaciones ordenadas : "
   
-    document.getElementById("minMax").innerHTML = "Minimo : " + "Maximo : " 
+    document.getElementById("minMax").innerHTML = "Minimo : " + "  Maximo : " 
     document.getElementById("txCuartiles").innerHTML = "Cuartiles : "
     document.getElementById("txRangoIntercuartilico").innerHTML = "Rango Intercuartilico : "
     document.getElementById("txRango").innerHTML = "Rango : "
@@ -19,6 +19,14 @@ function procesar(){
     document.getElementById("txVarianzaPoblacional").innerHTML = "Varianza poblacional : "
     document.getElementById("txDesviacionStandartMuestral").innerHTML = "Desviacion Estandar Muestral : "
     document.getElementById("txDesviacionStandartPoblacional").innerHTML = "Desviacion Estandar Poblacional : "
+    document.getElementById("txcoeficienteDeVariacionMuestral").innerHTML = "Coeficiente Variacion Muestral : "
+    document.getElementById("txcoeficienteDeVariacionPoblacional").innerHTML = "Coeficiente Variacion Poblacional : "
+    document.getElementById("txbarrerainferior").innerHTML = "Barrera inferior : "
+    document.getElementById("txoutliersinferiores").innerHTML = "Outliers Inferiores : "
+    document.getElementById("txbarrerasuperior").innerHTML = "Barrera superior : "
+    document.getElementById("txoutlierssuperiores").innerHTML = "Outliers Superiores : "
+    
+
 
     
     let observaciones  = document.getElementById("observaciones").value
@@ -60,7 +68,7 @@ function procesar(){
     console.log("variancia Poblacional: " + varianciaPoblacional(arrayNumeros))
     console.log("desviacion standart Muestral: " + desviacionStandartMuetral(arrayNumeros))
     console.log("desviacion standart Poblacional: " + desviacionStandartPoblacional(arrayNumeros))
-    console.log("coeficiente Variacion Muestral: " + coeficienteVariacionMuetral(arrayNumeros)+" %")
+    console.log("coeficiente Variacion Muestral: " + coeficienteVariacionMuestral(arrayNumeros)+" %")
     console.log("coeficiente Variacion Poblacional: " + coeficienteVariacionPoblacional(arrayNumeros)+" %")
     
 
@@ -77,6 +85,12 @@ function procesar(){
     document.getElementById("txVarianzaPoblacional").innerHTML += varianciaPoblacional(arrayNumeros)
     document.getElementById("txDesviacionStandartMuestral").innerHTML += desviacionStandartMuetral(arrayNumeros)
     document.getElementById("txDesviacionStandartPoblacional").innerHTML += desviacionStandartPoblacional(arrayNumeros)
+    document.getElementById("txcoeficienteDeVariacionMuestral").innerHTML += coeficienteVariacionMuestral(arrayNumeros)
+   
+    document.getElementById("txbarrerainferior").innerHTML += barreraInferior(arrayNumeros)
+    document.getElementById("txoutliersinferiores").innerHTML += outliersInferiores(arrayNumeros)
+    document.getElementById("txbarrerasuperior").innerHTML += barreraSuperior(arrayNumeros)
+    document.getElementById("txoutlierssuperiores").innerHTML += outliersSuperiores(arrayNumeros)
     
 
 }
@@ -225,7 +239,7 @@ function desviacionStandartPoblacional(arrayNums){
     return Math.sqrt(varianciaPoblacional(arrayNums));
 }
 
-function coeficienteVariacionMuetral(arrayNumeros){
+function coeficienteVariacionMuestral(arrayNumeros){
 
     return desviacionStandartMuetral(arrayNumeros)/media(arrayNumeros)*100
 }
@@ -233,6 +247,24 @@ function coeficienteVariacionMuetral(arrayNumeros){
 function coeficienteVariacionPoblacional(arrayNumeros){
     
     return desviacionStandartPoblacional(arrayNumeros)/media(arrayNumeros)*100
+}
+
+function barreraInferior(arrayNumeros){
+
+    return (cuartiles(arrayNumeros)[1] - ((1.5 * (rangoIntercuartilico(arrayNumeros)))))
+
+}
+
+function barreraSuperior(arrayNumeros){
+    return (cuartiles(arrayNumeros)[3] + ((1.5 * (rangoIntercuartilico(arrayNumeros)))))
+}
+
+function outliersInferiores(arrayNumeros){
+    return arrayNumeros.filter(numero => numero < barreraInferior(arrayNumeros)).sort((a, b) => a - b)
+}
+
+function outliersSuperiores(arrayNumeros){
+    return arrayNumeros.filter(numero => numero > barreraSuperior(arrayNumeros)).sort((a, b) => a - b)
 }
 
 

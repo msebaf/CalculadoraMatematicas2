@@ -23,15 +23,19 @@
         <div id="analisisCombinatorioSimple">
             <h3>Analisis combinatorio Simple</h3>
             <button
-                onclick="arreglosSimples(),permutacionesSimples(),combinacionesSimples(),arreglosConRepeticion(),permutacionesConRepeticion(),combinacionesConRepeticion()">RESULTADO
+                onclick="arreglosSimples(),permutacionesSimples(),combinacionesSimples(),
+                arreglosConRepeticion(),permutacionesConRepeticion(),
+                combinacionesConRepeticion()">RESULTADO
                 DE TODO</button>
-            <p>siempre n > p</p>
+            <p>siempre n > p; </p>
             <button onclick="arreglosSimples()">Arreglos Simples</button>
-            <h4 id="resultadoArreglo"> </h4>
+            <h4 id="resultadoArreglo">n cant elementos, p cuantos quiero combinar. (IMPORTA el orden) </h4>
+        
             <button onclick="permutacionesSimples()">Permutaciones Simples</button>
-            <h4 id="resultadoPermutacion"> </h4>
+            <h4 id="resultadoPermutacion">cantidad de combinaciones de todos lo elementos.(IMPORTA el orden) </h4>
+         
             <button onclick="combinacionesSimples()">Combinaciones Simples</button>
-            <h4 id="resultadoCombinacionSimple"> </h4>
+            <h4 id="resultadoCombinacionSimple">n cant elementos, p cuantos quiero combinar.(NO IMPORTA el orden) </h4>
         </div>
         <br>
 
@@ -39,17 +43,22 @@
         <div id="analisisCombinatorioConRepeticion">
             <h3>Análisis Combinatorio con Repetición</h3>
             <button onclick="arreglosConRepeticion()">Arreglos Con Repeticion</button>
-            <h4 id="resultadoArregloConRepeticion"> </h4>
+            <h4 id="resultadoArregloConRepeticion">n cant elementos, p cuantos quiero combinar. (IMPORTA el orden) </h4>
             <button onclick="permutacionesConRepeticion()">Permutaciones Con Repeticion</button>
-            <h4 id="resultadoPermutacionConRepeticion"> en proceso</h4>
+            <h4 id="resultadoPermutacionConRepeticion"> cantidad de combinaciones de todos lo elementos.(IMPORTA el orden)//en proceso</h4>
             <button onclick="combinacionesConRepeticion()">Combinaciones Con Repeticion</button>
-            <h4 id="resultadoCombinacionConRepeticion"> </h4>
+            <h4 id="resultadoCombinacionConRepeticion">n cant elementos, p cuantos quiero combinar.(NO IMPORTA el orden) </h4>
 
         </div>
 
 
 
     </div>
+    <div style="text-align: left;">
+    <h2>Introduce los p´s separados por , para Permutacion con Repeticion </h2>
+    <input type="String" id="pPerRep" placeholder="Introduce tus p´s " style="font-size: 26px">
+    </div>
+    
 </body>
 
 </html>
