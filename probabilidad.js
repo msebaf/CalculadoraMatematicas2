@@ -32,3 +32,18 @@ function probCond() {
     document.getElementById("resultadoAdiD").innerHTML = (adi1 + adi2)
      
  }
+
+ function probTot(){
+    const totsA = document.getElementById("totsA").value;
+    const  b = document.getElementById("totB").value;
+    let numerosTotString = totsA.split(",");
+    let numerosTot =[];
+    numerosTotString.forEach(numero => {
+      numerosTot.push(parseFloat(numero));
+    })
+    let total = 0;
+    numerosTot.forEach(numero => {
+      total +=b/numero
+    })
+    document.getElementById("resultadoTot").innerHTML = total
+ }

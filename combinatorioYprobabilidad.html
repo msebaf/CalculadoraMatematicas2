@@ -12,7 +12,8 @@
 
 <body>
     <h1>Analisis Combinatorio y Probabilidad</h1>
-    <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button></div>
+    <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button>
+        <button><a href="probabilidad.html">Probabilidad</a></button></div>
 
 
     <h2>Analisis combinatorios</h2>
@@ -63,19 +64,21 @@
         
         <div id="arbolDecision">
         <div id="cantidad">
-        <input type="radio" id="todos" name="cuantos" onclick="crearPregFinal(this)">
-        <label for="todos">Me interesan todos los elementos</label><br>
-        <input type="radio" id="algunos" name="cuantos" onclick="crearEnc()">
-        <label for="algunos">Me interesan alginos elementos</label><br>
+        <input type="radio" id="opA" name="cuantos" onclick="crearPregFinal(true)">
+        <label for="todos" id="lbA">Me interesan todos los elementos</label><br>
+        <input type="radio" id="opB" name="cuantos" onclick="crearEnc()">
+        <label for="algunos" id="lbB">Me interesan algunos elementos</label><br>
             </div>
-            <div id="encrucijada">
-
+            <div id="Resultado">
+                <p id="res"></p>
             </div>
-            <div id="PregFinal"></div>
+            <div id="volver"></div>
+        
             
-            <div id="resultadoEncuesta"></div>
         </div>
+        
         </div>
+        <Button onclick="reiniciar()">Reiniciar</Button>
 </body>
 
 </html>

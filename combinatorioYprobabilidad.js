@@ -106,112 +106,117 @@ function arreglosSimples() {
 
 
 
-let tipos = ["Arreglos Simples", "Permutaciones Simples", "Combinaciones Simples", 
+var tipos = ["Arreglos Simples", "Permutaciones Simples", "Combinaciones Simples", 
 "Arreglos Con Repeticion", "Permutaciones Con Repeticion", "Combinaciones Con Repeticion"];
+let bkup = document.getElementById("repeticion")
+
+ function crearPregFinal(permutacion) {
+
+  if(permutacion && tipos.length==6){
+
+      tipos = tipos.filter(tipo => {
+      return tipo.includes("Permutaciones")
+    })
+    
+    console.log(tipos)
+    document.getElementById("lbA").innerHTML= "Se pueden repetir"
+    let opA = document.getElementById("opA");
+    opA.removeAttribute("onClick")
+    opA.setAttribute("onClick", "pregFinal(true)");
+    opA.checked = false;
+    document.getElementById("lbB").innerHTML= "No se pueden repetir"
+    let opB = document.getElementById("opB")
+    opB.removeAttribute("onClick")
+    opB.setAttribute("onClick", "pregFinal(false)");
+    opB.checked = false;
+
+  }
+  else{
+    if(permutacion){
+      tipos = tipos.filter(tipo => {
+        return tipo.includes("Arreglos")
+      })
+      document.getElementById("lbA").innerHTML= "Se puede repetir"
+      let opA = document.getElementById("opA");
+      opA.removeAttribute("onClick")
+      opA.setAttribute("onClick", "pregFinal(true)");
+      opA.checked = false;
+      document.getElementById("lbB").innerHTML= "No se puede repetir"
+      let opB = document.getElementById("opB")
+      opB.removeAttribute("onClick")
+      opB.setAttribute("onClick", "pregFinal(false)");
+      opB.checked = false;
+    }else{
+      tipos = tipos.filter(tipo => {
+        return tipo.includes("Combinaciones")
+      })
+      document.getElementById("lbA").innerHTML= "Se puede repetir"
+      let opA = document.getElementById("opA");
+      opA.removeAttribute("onClick")
+      opA.setAttribute("onClick", "pregFinal(true)");
+      opA.checked = false;
+      document.getElementById("lbB").innerHTML= "No se puede repetir"
+      let opB = document.getElementById("opB")
+      opB.removeAttribute("onClick")
+      opB.setAttribute("onClick", "pregFinal(false)");
+      opB.checked = false;
+    
+
+
+
+ }
+}
+}
+
+ function pregFinal(repetir) {
+  
+  if(repetir){
+    tipos = tipos.filter(tipo => {
+      return tipo.includes("Repeticion")
+    })
+    document.getElementById("res").innerHTML= tipos[0]
+  }
+  else{
+    tipos = tipos.filter(tipo => {
+      return tipo.includes("Simples")
+    })
+
+    document.getElementById("res").innerHTML= tipos[0]
+  }
+  let dvv = document.getElementById("cantidad")
+  dvv.setAttribute("hidden", "true")
+
+
+
+ }
 
  function crearEnc(){
-  tipos = ["Arreglos Simples", "Permutaciones Simples", "Combinaciones Simples", 
-"Arreglos Con Repeticion", "Permutaciones Con Repeticion", "Combinaciones Con Repeticion"];
-if(document.getElementById("pp")){
-document.getElementById("pp").remove()
-}
-  if(document.getElementById("divN2")){
-  document.getElementById("divN2").remove();
-  }
-  if(document.getElementById("divN")){
-  document.getElementById("divN").remove();
-  }
-  let encru = document.getElementById("encrucijada");
-  
-  let divN= document.createElement('div');
-  divN.id = 'divN';
-  const radio1 = document.createElement('input');
-    radio1.type = 'radio';
-    radio1.name = 'enc';
-    radio1.id = 'ordenSi';
-    radio1.addEventListener('click', function() {
-      crearPregFinal(null, tipos = ["Arreglos Simples", 
-      "Arreglos Con Repeticion"])});
-    const label1 = document.createElement('label');
-    label1.htmlFor = 'ordenSi';
-    label1.textContent = 'Interesa el orden';
-    const radio2 = document.createElement('input');
-    radio2.type = 'radio';
-    radio2.name = 'enc';
-    radio2.id = 'ordenNo';
-    radio2.addEventListener('click', function() {
-      crearPregFinal( null,tipos = ["Arreglos Simples", 
-      "Arreglos Con Repeticion"])});
-    const label2 = document.createElement('label');
-    label2.htmlFor = 'ordenNo';
-    label2.textContent = 'NO interesa el orden';
-    encru.appendChild(divN);
-    divN.appendChild(radio1);
-    divN.appendChild(label1);
-    divN.appendChild(document.createElement('br'));
-    divN.appendChild(radio2);
-    divN.appendChild(label2);
-
+ tipos= ["Arreglos Simples",  "Combinaciones Simples", 
+ "Arreglos Con Repeticion", "Combinaciones Con Repeticion"];
+   document.getElementById("lbA").innerHTML= "Interesa el orden"
+   let opA = document.getElementById("opA");
+   opA.removeAttribute("onClick")
+   opA.setAttribute("onClick", "crearPregFinal(true)");
+   opA.checked = false;
+   document.getElementById("lbB").innerHTML= "No Interesa el orden"
+   let opB = document.getElementById("opB")
+   opB.removeAttribute("onClick")
+   opB.setAttribute("onClick", "crearPregFinal(false)");
+   opB.checked = false;
  }
+
+ function reiniciar(){
+  document.getElementById("cantidad").removeAttribute("hidden")
+  document.getElementById("res").innerHTML= ""
+  document.getElementById("lbA").innerHTML= "Me interesan todos los elementos"
+  let opA = document.getElementById("opA");
+  opA.removeAttribute("onClick")
+  opA.setAttribute("onClick", "crearPregFinal(true)");
+  opA.checked = false;
+  document.getElementById("lbB").innerHTML= "Me interesan algunos elementos"
+  let opB = document.getElementById("opB")
+  opB.removeAttribute("onClick")
+  opB.setAttribute("onClick", "crearEnc()");
+  opB.checked = false;
   
- function crearPregFinal(boton, tipos){
-  
-  if(document.getElementById("pp")){
-    document.getElementById("pp").remove()
-    }
-  if(boton!=null){
- if(boton.id == "todos"){
-  tipos = ["Permutaciones Simples" 
-, "Permutaciones Con Repeticion"];
-  if(document.getElementById("divN")){
-  document.getElementById("divN").remove();
- }
-}}
-if(document.getElementById("divN2")){
-  document.getElementById("divN2").remove();
-}
-let pregFinal = document.getElementById("PregFinal")
-let divN= document.createElement('div');
-divN.id = 'divN2';
-pregFinal.appendChild(divN);
-const radio1 = document.createElement('input');
-    radio1.type = 'radio';
-    radio1.name = 'pf';
-    radio1.id = 'Si';
-    radio1.addEventListener('click',  function() {
-      resultadoSimple( tipos.filter(function(item) {
-        return !item.includes("Repeticion");
-      }))});
-    const label1 = document.createElement('label');
-    label1.htmlFor = 'Si';
-    label1.textContent = 'SI se pueden repetir elementos';
-    const radio2 = document.createElement('input');
-    radio2.type = 'radio';
-    radio2.name = 'pf';
-    radio2.id = 'No';
-    radio1.addEventListener('click', function() {
-      resultadoSimple(tipos.filter(function(item) {
-        return !item.includes("Simples");
-      }))});
-    const label2 = document.createElement('label');
-    label2.htmlFor = 'No';
-    label2.textContent = 'NO se pueden repetir elementos';
-    divN.appendChild(radio1);
-    divN.appendChild(label1);
-    divN.appendChild(document.createElement('br'));
-    divN.appendChild(radio2);
-    divN.appendChild(label2);
-
-}
-
- 
-
- function resultadoSimple(tipo){
-  let res = document.getElementById("resultadoEncuesta");
-  
-  p =document.createElement("p");
-  p.id = "pp";
-  p.innerHTML = "Necesitas una " + tipo
-  res.appendChild(p);
-
  }

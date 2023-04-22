@@ -9,8 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Analisis Combinatorio y Probabilidad</h1>
-    <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button></div><br>
+    <h1> Probabilidad</h1>
+    <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button>
+        <button><a href="combinatorioYprobabilidad.html">Probabilidad</a></button></div><br>
     <div id="clasico" class="inlineClass">
         <p> Probabilidad Clasica </p>
     <form action="" id="fClasico" class="inlineClass">
@@ -29,6 +30,7 @@
      <input type="number" name="total" placeholder="Suc. que ya ocurrio" id="sucesoS">
     <input type="button" value="Calcular" onclick= "probCond()"> 
 </form>
+<p>-------------------------------------------------------------------------------------------------</p>
 <p class="inlineClass" id="resultadoCon">resultado</p>
 </div><br>
 <p > Probabilidad Sucesos Independientes (ingresar probabilidades) => P(A union B)</p>
@@ -59,5 +61,17 @@
 </form>
 <p class="inlineClass" id="resultadoAdiD">resultado</p>
 </div><br>
+
+<h1>Teorema de la probabilidad total</h1>
+<h1>Mañana ......tal vez....no usar</h1>
+<p>Tenemos sucesos A1_ _ _ _ An exhaustivos y excluyentes y un sucesos B que no pertenece al sistema condicinado a A (P(B/A1_ _ _ P(B/An)))</p>
+<div style="text-align: left;">
+    <h2>Introduce los A´s  (probabilidades )separados por ,  </h2>
+    <input type="String" id="totAs" placeholder="Introduce tus p´s " style="font-size: 26px">
+    <input type="number" name="total" placeholder="Prob suceso 2" id="totB">
+    <input type="button" value="Calcular" onclick= "ProbTot()"> 
+    <p class="inlineClass" id="resultadoTot">resultado</p>
+    </div>
+
 </body>
 </html>
