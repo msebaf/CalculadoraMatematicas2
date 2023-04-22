@@ -45,7 +45,7 @@
             <button onclick="arreglosConRepeticion()">Arreglos Con Repeticion</button>
             <h4 id="resultadoArregloConRepeticion">n cant elementos, p cuantos quiero combinar. (IMPORTA el orden) </h4>
             <button onclick="permutacionesConRepeticion()">Permutaciones Con Repeticion</button>
-            <h4 id="resultadoPermutacionConRepeticion"> cantidad de combinaciones de todos lo elementos.(IMPORTA el orden)//en proceso</h4>
+            <h4 id="resultadoPermutacionConRepeticion"> cantidad de combinaciones de todos lo elementos.(IMPORTA el orden)</h4>
             <button onclick="combinacionesConRepeticion()">Combinaciones Con Repeticion</button>
             <h4 id="resultadoCombinacionConRepeticion">n cant elementos, p cuantos quiero combinar.(NO IMPORTA el orden) </h4>
 
@@ -58,7 +58,24 @@
     <h2>Introduce los p´s separados por , para Permutacion con Repeticion </h2>
     <input type="String" id="pPerRep" placeholder="Introduce tus p´s " style="font-size: 26px">
     </div>
-    
+    <h3>Indeciso?</h3>
+    <div>
+        
+        <div id="arbolDecision">
+        <div id="cantidad">
+        <input type="radio" id="todos" name="cuantos" onclick="crearPregFinal(this)">
+        <label for="todos">Me interesan todos los elementos</label><br>
+        <input type="radio" id="algunos" name="cuantos" onclick="crearEnc()">
+        <label for="algunos">Me interesan alginos elementos</label><br>
+            </div>
+            <div id="encrucijada">
+
+            </div>
+            <div id="PregFinal"></div>
+            
+            <div id="resultadoEncuesta"></div>
+        </div>
+        </div>
 </body>
 
 </html>

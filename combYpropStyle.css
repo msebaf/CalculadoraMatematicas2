@@ -26,3 +26,12 @@ a {
     width: 50%;
     text-align: center;
   }
+
+  #arbolDecision {
+    display: inline-flex;
+    
+ 
+    text-align: center;
+  }
+ 
+  

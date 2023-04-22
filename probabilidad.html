@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="probabilidad.js"></script>
+    <link rel="stylesheet" href="probabilidad.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analisis Combinatorio y Probabilidad</h1>
+    <div id="botones"> <button><a href="index.html">Medidas de Posiicon y Dispersion</a></button></div><br>
+    <div id="clasico" class="inlineClass">
+        <p> Probabilidad Clasica </p>
+    <form action="" id="fClasico" class="inlineClass">
+        
+        <input type="number" name="favorables" placeholder="casos favorables" id="favorablesC">
+         <input type="number" name="total" placeholder="Total de posibilidades" id="totalC">
+        <input type="button" value="Calcular" onclick= "probClasica()"> 
+    </form>
+    <p class="inlineClass" id="resultadoC">resultado</p>
+</div><br><br>
+<div id="condicionada" class="inlineClass">
+    <p > Probabilidad Condicionada (ingresar probabilidades) ref => P(A/B) B= condicionante(ya ocurrio)</p>
+<form action="" id="fComb" class="inlineClass">
+    
+    <input type="number" name="favorables" placeholder="Suc. que no ocurrio" id="sucesoN">
+     <input type="number" name="total" placeholder="Suc. que ya ocurrio" id="sucesoS">
+    <input type="button" value="Calcular" onclick= "probCond()"> 
+</form>
+<p class="inlineClass" id="resultadoCon">resultado</p>
+</div><br>
+<p > Probabilidad Sucesos Independientes (ingresar probabilidades) => P(A union B)</p>
+<form action="" id="fIndependientes" class="inlineClass">
+    
+    <input type="number" name="favorables" placeholder="Prob suceso 1" id="sucesoAind">
+     <input type="number" name="total" placeholder="Prob suceso 2" id="sucesoBind">
+    <input type="button" value="Calcular" onclick= "probIndependientes()"> 
+</form>
+<p class="inlineClass" id="resultadoInd">resultado</p>
+</div><br>
+<p > Adicion de probabilidades no disyuntas (ingresar probabilidades) => P(A u B) = P(A+B - (A union B))</p>
+<form action="" id="fIndependientes" class="inlineClass">
+    
+    <input type="number" name="favorables" placeholder="Prob suceso 1" id="sucesoAadiNoD">
+     <input type="number" name="total" placeholder="Prob suceso 2" id="sucesoBadiNoD">
+     <input type="number" name="total" placeholder="Prob union A y B" id="unionAyB">
+    <input type="button" value="Calcular" onclick= "probAdiNoD()"> 
+</form>
+<p class="inlineClass" id="resultadoAdiNoD">resultado</p>
+</div><br>
+<p > Adicion de probabilidades disyuntas (ingresar probabilidades) => P(A u B) = P(A+B - (A union B))</p>
+<form action="" id="fIndependientes" class="inlineClass">
+    
+    <input type="number" name="favorables" placeholder="Prob suceso 1" id="sucesoAadiD">
+     <input type="number" name="total" placeholder="Prob suceso 2" id="sucesoBadiD">
+    <input type="button" value="Calcular" onclick= "probAdiD()"> 
+</form>
+<p class="inlineClass" id="resultadoAdiD">resultado</p>
+</div><br>
+</body>
+</html>
